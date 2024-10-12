@@ -5,7 +5,13 @@
 
 `default_nettype none
 
-module tt_um_example (
+`include "quad_nand.v"
+`include "bus_transceiver.v"
+`include "d_register.v"
+`include "hex_inverter.v"
+`include "quad_2_1_mux.v"
+
+module tt_um_sram (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -21,7 +27,48 @@ module tt_um_example (
   assign uio_out = 0;
   assign uio_oe  = 0;
 
+
+// Setup data for RAM Module
+
+  wire [7:0] RAM_A; // Address Lines
+  wire [7:0] RAM_D; // Data Lines
+  wire [7:0] RAM_O; // Output Lines
+  wire CS_n;
+  wire WE_n;
+
+  // ... instanciate ram module
+
+
+  // Setup for the DM7404 Hex Inverting Gates
+  wire [7:0] INV_O; // output lines of inverter
+
+  hex_inverter inverter_array( .A(RAM_O), .Y(INV_O) );
+
+  // Setup for Octal Bus Transceiver
+
+  // Note: Not sure about the BUS inputs but for now making var
+  wire [7:0] BT_B;
+  wire CE;
+  wire AtoB;
+
+  bus_transceiver inverter_to_bus ( .OE_n(CE), .DIR(AtoB), .A(INV_O), .B(BT_B));
+
+  // Not complete
+
+
+
+
+
+
+
+
+
+
+
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
+
+
+  
 
 endmodule
