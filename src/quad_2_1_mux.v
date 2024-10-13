@@ -1,6 +1,3 @@
-`ifndef QUAD_2_1_MUX_V
-`define QUAD_2_1_MUX_V
-
 module quad_2_1_mux (
     input wire strobe,
     input wire select,
@@ -17,5 +14,3 @@ module quad_2_1_mux (
   assign Y = enable ? (select ? B : A) : 4'b0000;
 
 endmodule
-
-`endif QUAD_2_1_MUX_V

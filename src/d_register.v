@@ -1,6 +1,3 @@
-`ifndef D_REGISTER_V
-`define D_REGISTER_V
-
 module d_register (
     input CLR,
     input CLK,
@@ -39,5 +36,3 @@ module d_register (
   end
 
 endmodule
-
-`endif D_REGISTER_V

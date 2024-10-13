@@ -49,16 +49,6 @@ module tt_um_sram (
 
   // Not complete
 
-
-
-
-
-
-
-
-
-
-
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
 

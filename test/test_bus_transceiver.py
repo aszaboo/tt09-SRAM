@@ -21,7 +21,5 @@ async def test_B_to_A(dut):
     # Set initial an initial value for A
     for B in range(255)
     await Timer(1, units='ns')
-    expected = 
-    assert 
         
     cocotb.log.info("All tests passed!")
