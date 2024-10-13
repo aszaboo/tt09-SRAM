@@ -1,4 +1,4 @@
-module bus_transceiver_8_bit (
+module bus_transceiver (
     input OE_n, // Output enable (active low)
     input DIR, // Direction control (0: B to A, 1: A to B)
     inout [7:0] A, // Port A (8-bits)
