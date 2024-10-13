@@ -1,3 +1,6 @@
+`ifndef BUS_TRANSCEIVER_V
+`define BUS_TRANSCEIVER_V
+
 module bus_transceiver (
     input OE_n, // Output enable (active low)
     input DIR, // Direction control (0: B to A, 1: A to B)
@@ -9,3 +12,5 @@ module bus_transceiver (
   assign B = ~OE_n ? (DIR ? A : B) : 8'bz;
 
 endmodule
+
+`endif // BUS_TRANSCEIVER_V

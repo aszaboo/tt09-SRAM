@@ -1,3 +1,6 @@
+`ifndef QUAD_NAND_V
+`define QUAD_NAND_V
+
 module quad_nand (
     input [3:0] a,
     input [3:0] b,
@@ -8,4 +11,6 @@ module quad_nand (
 assign y = ~(a & b);
 
 endmodule
+
+`endif QUAD_NAND_V
 

@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = sram.v bus_transceiver.v d_register.v hex_inverter.v quad_2_1_mux.v quad_nand.v
+PROJECT_SOURCES = tt_um_sram.v bus_transceiver.v d_register.v hex_inverter.v quad_2_1_mux.v quad_nand.v
 
 ifneq ($(GATES),yes)
 
