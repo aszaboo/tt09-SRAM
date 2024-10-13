@@ -36,7 +36,7 @@ VERILOG_SOURCES += $(PWD)/tb.v
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file
-MODULES = test_bus_transceiver_8 test_d_register test_hex_inverter test_quad_2_1_mux test_quad_nand
+MODULES = test_bus_transceiver test_d_register test_hex_inverter test_quad_2_1_mux test_quad_nand
 
 # include cocotb's make rules to take care of the simulator setup
 include $(shell cocotb-config --makefiles)/Makefile.sim
